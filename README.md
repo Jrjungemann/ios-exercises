@@ -2,7 +2,8 @@ ios-exercises
 =============
 - `BlocExercises.xcodeproj` contains the Xcode project with iOS exercises.
 - Specific assignments are in [Exercise Descriptions](Exercise%20Descriptions/).\nMy first git change
-\nNow, this is a story all about how,
+<<<<<<< HEAD
+Now, this is a story all about how,
 my life got twisted upside down.
 And I'd like to take a minute just sit right there, 
 I'll tell you how I became the prince of a town called Bel-Air.
@@ -44,3 +45,6 @@ I pulled up to a house about seven or eight,
 Looked at my kingdom, I was finally there.
 To sit on my throne as the Prince of Bel-Air.
 Read more at http://www.songlyrics.com/will-smith/fresh-prince-of-bel-air-full-theme-tune-lyrics/#voo2DU5XTGkFRsaY.99
+=======
+Lets try this again and instead commit to the right branch
+>>>>>>> my-first-branch
