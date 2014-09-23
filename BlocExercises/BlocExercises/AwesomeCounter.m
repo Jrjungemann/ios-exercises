@@ -11,40 +11,20 @@
 @implementation AwesomeCounter
 
 - (NSString *) stringWithNumbersBetweenNumber:(NSInteger)number andOtherNumber: (NSInteger)otherNumber {
-    
-    if (number < otherNumber) {
-        
-        NSMutableString *greaterThan = [[NSMutableString alloc] init];
-        [greaterThan appendString:[NSString stringWithFormat:@"%ld", (long)number]];
-        while (number < otherNumber) {
-            ++number;
-            [greaterThan appendString:[NSString stringWithFormat:@"%ld", (long)number]];
-        }
-        
-        return greaterThan;
-        
-    }
-    
     if (number > otherNumber) {
-        
-        NSMutableString *lessThan = [[NSMutableString alloc] init];
-        [lessThan appendString:[NSString stringWithFormat:@"%ld", (long)otherNumber]];
-        while (number > otherNumber) {
-            ++otherNumber;
-            [lessThan appendString:[NSString stringWithFormat:@"%ld", (long)otherNumber]];
-        }
-        return lessThan;
+        NSInteger temp = otherNumber; // 6 bytes -> stack, 6 bytes represent one large ass number, read out the binary value 01010101010001001010101010101010…
+        otherNumber = number;
+        number = temp;
     }
     
-    if (number == otherNumber) {
-        NSMutableString *equals = [[NSMutableString alloc] init];
-        while (number == otherNumber) {
-            [equals appendString:[NSString stringWithFormat:@"%ld", (long)number]];
-            return equals;
-        }
+    NSMutableString *returnString = [NSMutableString new];
+    [returnString appendString:[NSString stringWithFormat:@"%ld", (long)number]];
+    while (number < otherNumber) {
+        ++number;
+        [returnString appendString:[NSString stringWithFormat:@"%ld", (long)number]];
     }
     
-    return nil;
+    return returnString;
 }
 
 @end

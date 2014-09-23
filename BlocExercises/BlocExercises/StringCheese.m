@@ -22,8 +22,8 @@
     if (cheeseRange.location == NSNotFound) {
         return cheeseName;
     }
-    NSString *cheeseWithoutCheese = [cheeseName stringByReplacingCharactersInRange:cheeseRange withString:@""];
-    return cheeseWithoutCheese;
+    
+    return [cheeseName stringByReplacingCharactersInRange:cheeseRange withString:@""];
 }
 
 - (NSString *) numberOfCheesesStringWithCheeseCount:(NSUInteger)cheeseCount {
