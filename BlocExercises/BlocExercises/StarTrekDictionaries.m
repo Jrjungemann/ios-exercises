@@ -11,18 +11,32 @@
 @implementation StarTrekDictionaries
 
 - (NSString *)favoriteDrinkForStarTrekCharacterDictionary:(NSDictionary *)characterDictionary {
-    /* WORK HERE */
-    return @"";
+
+    return [characterDictionary objectForKey: @"favorite drink"];
+        
 }
 
 - (NSArray *)arrayOfFavoriteDrinksForStarTrekCharacters:(NSArray *)charactersArray {
-    /* WORK HERE */
-    return @[];
+    
+//    Example Aaron gave me after I finished - loops through the dictionary and adds each matched object to array
+
+//    NSMutableArray *array = [NSMutableArray array];
+
+//        for (NSDictionary *characterDictionary in charactersArray) {
+//            [array addObject:characterDictionary[@"favorite drink"]];
+//        }
+//        return array;
+    
+    
+    return [charactersArray valueForKey: @"favorite drink"];
 }
 
 - (NSDictionary *)dictionaryWithQuoteAddedToStarTrekCharacterDictionary:(NSDictionary *)characterDictionary {
-    /* WORK HERE */
-    return @{};
+    NSMutableDictionary *withQuote = [characterDictionary mutableCopy];
+
+    [withQuote setObject:@"worf worf worf" forKey:@"quote"];
+    
+    return withQuote;
 }
 
 @end
